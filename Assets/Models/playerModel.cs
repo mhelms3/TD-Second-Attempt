@@ -6,14 +6,14 @@ namespace tdGame
 {
     public class playerModel : MonoBehaviour
     {
-        public int picks;
+        public float baseMiningTime;
         public int hammers;
         public int stone;
-        gameDisplay _Display;
+        //gameDisplay _Display;
         // Start is called before the first frame update
         void Start()
         {
-            _Display = FindObjectOfType<gameDisplay>();
+            //_Display = FindObjectOfType<gameDisplay>();
         }
 
         // Update is called once per frame
@@ -22,12 +22,6 @@ namespace tdGame
 
         }
 
-        void usePick()
-        {
-            picks -= 1;
-            Debug.Log("Picks:" + picks);
-            _Display.BroadcastMessage("updateTopDisplay");
 
-        }
     }
 }

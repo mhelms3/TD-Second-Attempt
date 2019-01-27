@@ -6,9 +6,9 @@ namespace tdGame
 {
     public class tileData 
     {
-        private bool isPassable { get; set; }
-        private int moveCost { get; set; }
-        private float miningCost { get; set; }
+        public bool isPassable { get; set; }
+        public int moveCost { get; set; }
+        public float miningCost { get; set; }
         private float miningComplete { get; set; }
         public rockData rockType;
         public int cracks;
