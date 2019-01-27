@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace tdGame
 {
-    public enum terrainType { Wood, Field, Mountain, Hill }
     public struct tilePosition
     {
         public int positionX { get; set; }

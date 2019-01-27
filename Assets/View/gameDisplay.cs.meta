@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b871c6fbe7fd74c428687cbd81fc9408
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - picksRemaining: {fileID: 2139557129399119700, guid: d00f4e37096c68147a3d49d251613db1,
+      type: 3}
+  - hammerssRemaining: {instanceID: 0}
+  - stoneAmount: {instanceID: 0}
+  - roundNumber: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
