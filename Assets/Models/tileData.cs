@@ -13,14 +13,16 @@ namespace tdGame
         public rockData rockType;
         public int cracks;
         private Vector3Int tPos;
+        public GameObject tile;
         
-        public tileData(rockData r,  bool s, int m, Vector3Int p)
+        public tileData(rockData r,  bool s, int m, Vector3Int p, GameObject t)
         {
             isPassable = s;
             moveCost = m;
             rockType = r;
             miningCost = r.hardness;
             tPos = new Vector3Int(p.x, p.y, p.z);
+            tile = t;
         }       
 
         public Vector3 getTilePosition()

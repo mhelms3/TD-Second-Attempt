@@ -10,26 +10,35 @@ namespace tdGame
         
         private void OnMouseDown()
         {
-            gameMap _Map = FindObjectOfType<gameMap>();
-            gameModel _Game = FindObjectOfType<gameModel>();
-            gameDisplay _Display = FindObjectOfType<gameDisplay>();
-            playerModel _Player = FindObjectOfType<playerModel>();
-            float miningCost = 0;
-            int newStone = 0;
-            Debug.Log("1:" + _Game.miningTimeRemaining);
-
-            if (_Game.miningTimeRemaining > 0)
+            if (gameObject.layer == 8)
+            { }
+            else
             {
-                Vector3 p = transform.position;
-                tileData td = _Map.tiles[(int)p.x, (int)p.y, (int)p.z];
-                miningCost = td.miningCost;
-                if (miningCost <= _Game.miningTimeRemaining)
+
+                gameMap _Map = FindObjectOfType<gameMap>();
+                gameModel _Game = FindObjectOfType<gameModel>();
+                gameDisplay _Display = FindObjectOfType<gameDisplay>();
+                playerModel _Player = FindObjectOfType<playerModel>();
+                float miningCost = 0;
+                int newStone = 0;
+                Debug.Log("1:" + _Game.miningTimeRemaining);
+
+                if (_Game.miningTimeRemaining > 0)
                 {
-                    newStone = (5 + (int)(miningCost / 5));
-                    _Player.stone += newStone;
-                    usePick(miningCost, _Game, _Display);
-                    this.GetComponent<SpriteRenderer>().sprite = _Map.floorSprites[0];
-                    this.GetComponent<SpriteRenderer>().color = baseColor;
+                    Vector3 p = transform.position;
+                    miningCost = _Map.tiles[(int)p.x, (int)p.y, (int)p.z].miningCost;
+                    if (miningCost <= _Game.miningTimeRemaining)
+                    {
+                        newStone = (5 + (int)(miningCost / 5));
+                        _Player.stone += newStone;
+                        usePick(miningCost, _Game, _Display);
+                        //Debug.Log(_Map.tiles[(int)p.x, (int)p.y, (int)p.z].rockType.rockName);
+                        _Map.tiles[(int)p.x, (int)p.y, (int)p.z].rockType = _Map.rocks[4];
+                        //Debug.Log(_Map.tiles[(int)p.x, (int)p.y, (int)p.z].rockType.rockName);
+                        this.GetComponent<SpriteRenderer>().sprite = _Map.floorSprites[0];
+                        this.GetComponent<SpriteRenderer>().color = baseColor;
+                        _Map.spreadActivation((int)p.x, (int)p.y);
+                    }
                 }
             }
         }

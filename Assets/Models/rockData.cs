@@ -6,13 +6,13 @@ namespace tdGame
 {
     public class rockData
     {
-        public string rockType { get; set; }
+        public string rockName { get; set; }
         public int hardness { get; set; }
         public Color32 rockColor { get; set;}
 
         public rockData(string r, int h, Color32 c)
         {
-            rockType = r;
+            rockName = r;
             hardness = h;
             rockColor = c;
         }
@@ -24,7 +24,7 @@ namespace tdGame
 
         public void printRockData()
         {
-            Debug.Log("Type: " + rockType + "Hardness: "+hardness);
+            Debug.Log("Type: " + rockName + "Hardness: "+hardness);
         }
     }
 }
